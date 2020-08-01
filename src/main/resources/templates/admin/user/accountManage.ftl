@@ -31,7 +31,7 @@
 
     <!-- 侧边导航栏 -->
     <div class="left-sidebar">
-        <!-- 用户信息 -->
+        <!-- 用户信息
         <div class="tpl-sidebar-user-panel">
             <div class="tpl-user-panel-slide-toggleable">
                 <div class="tpl-user-panel-profile-picture">
@@ -43,6 +43,7 @@
                     </span>
             </div>
         </div>
+        -->
 
         <!-- 菜单 -->
         <ul class="sidebar-nav">

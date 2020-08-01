@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
     <script src="${basePath}/statics/admin/assets/js/jquery.min.js"></script>
+    <#-- amaze的分页 -->
+    <script src="${basePath}/statics/admin/assets/js/amazeui-pagination.js"></script>
 </head>
 <body data-type="widgets">
     <script src="${basePath}/statics/admin/assets/js/theme.js"></script>
@@ -30,7 +32,7 @@
 
         <!-- 侧边导航栏 -->
         <div class="left-sidebar">
-            <!-- 用户信息 -->
+            <!-- 用户信息
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
@@ -42,6 +44,7 @@
                         </span>
                 </div>
             </div>
+            -->
 
             <!-- 菜单 -->
             <ul class="sidebar-nav">
@@ -360,14 +363,30 @@
                                                  <td style="text-align: center;">m</td>
                                                  <td style="text-align: center;"><button class="am-btn am-btn-danger am-btn-xs" type="button">删除</button></td>
                                              </tr>
+                                             <tr>
+                                                 <td style="text-align: center;"><input type="checkbox" name="unitCheckbox"></td>
+                                                 <td style="text-align: center;">3</td>
+                                                 <td style="text-align: center;">GSDDF</td>
+                                                 <td style="text-align: center;">厘米</td>
+                                                 <td style="text-align: center;">cm</td>
+                                                 <td style="text-align: center;"><button class="am-btn am-btn-danger am-btn-xs" type="button">删除</button></td>
+                                             </tr>
+                                             <tr>
+                                                 <td style="text-align: center;"><input type="checkbox" name="unitCheckbox"></td>
+                                                 <td style="text-align: center;">4</td>
+                                                 <td style="text-align: center;">GSDDF</td>
+                                                 <td style="text-align: center;">毫米</td>
+                                                 <td style="text-align: center;">mm</td>
+                                                 <td style="text-align: center;"><button class="am-btn am-btn-danger am-btn-xs" type="button">删除</button></td>
+                                             </tr>
                                         </tbody>
 
                                     </table>
 
                                 </div>
-                                <#--
+
                                 <div class="am-u-lg-12 am-cf">
-                                    <p id="TOTAL" class="am-fr" style="padding-left: 2%;margin: 1.5rem 0;float: left;">第 <span id="start"></span> 到 <span id="end"></span> 条记录，共 <span id="totalNum"></span> 条</p>
+                                    <p id="TOTAL" class="am-fr" style="padding-left: 2%;margin: 1.5rem 0;float: left;">第 <span id="start">1</span> 到 <span id="end">4</span> 条记录，共 <span id="totalNum">4</span> 条</p>
                                     <div class="am-fr">
 
                                         <ul class="am-pagination tpl-pagination">
@@ -375,7 +394,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                -->
+
                             </div>
                         </div>
                     </div>
@@ -393,5 +412,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+
+    <script>
+        $(function () {
+            pagination = new Pagination({
+                wrap: $('.am-pagination'), // 存放分页内容的容器
+                count: 5, // 总页数
+                current: 1, // 当前的页数（默认为1）
+                callback: function (page) { // 每一个页数按钮的回调事件
+                    // page 为当前点击的页数
+                }
+            });
+        })
+    </script>
 </body>
 </html>

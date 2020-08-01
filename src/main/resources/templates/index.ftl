@@ -60,7 +60,7 @@
                             <i class="am-icon-table sidebar-nav-link-logo"></i> 量化评价系统
                             <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                         </a>
-                        <ul class="sidebar-nav sidebar-nav-sub">
+                        <ul class="sidebar-nav sidebar-nav-sub" style="display: block;">
                             <li class="sidebar-nav-link">
                                 <a href="${basePath}/admin/enterManage">
                                     <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 项目基础信息
@@ -81,7 +81,7 @@
                             <i class="am-icon-table sidebar-nav-link-logo"></i> 数据遴选管理
                             <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                         </a>
-                        <ul class="sidebar-nav sidebar-nav-sub">
+                        <ul class="sidebar-nav sidebar-nav-sub" style="display: block;">
                             <li class="sidebar-nav-link">
                                 <a href="${basePath}/dataSelect/lifeCycleManage">
                                     <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 生命周期阶段管理
@@ -125,7 +125,7 @@
                             <i class="am-icon-table sidebar-nav-link-logo"></i> 消息管理
                             <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                         </a>
-                        <ul class="sidebar-nav sidebar-nav-sub">
+                        <ul class="sidebar-nav sidebar-nav-sub" style="display: block;">
                             <li class="sidebar-nav-link">
                                 <a href="${basePath}/message/edit">
                                     <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 发送消息
@@ -151,7 +151,7 @@
                             <i class="am-icon-table sidebar-nav-link-logo"></i> 系统管理
                             <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
                         </a>
-                        <ul class="sidebar-nav sidebar-nav-sub">
+                        <ul class="sidebar-nav sidebar-nav-sub" style="display: block;">
                             <li class="sidebar-nav-link">
                                 <a href="${basePath}/user/accountManage">
                                     <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 用户账号管理
@@ -292,251 +292,277 @@
         <!-- 内容区域 -->
         <div class="tpl-content-wrapper">
 
-            <div class="container-fluid am-cf">
-                <div class="row">
-                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                        <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 部件首页 <small>Amaze UI</small></div>
-                        <p class="page-header-description">Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件。</p>
-                    </div>
-                    <div class="am-u-lg-3 tpl-index-settings-button">
-                        <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
-                    </div>
-                </div>
-
-            </div>
+            <!--<div class=" am-cf">-->
+            <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="am-u-sm-12 am-u-md-12 am-u-lg-9">&ndash;&gt;-->
+            <!--<div class="page-header-heading">-->
+            <!--<span class="am-icon-home page-header-heading-icon"></span> 首页-->
+            <!--&lt;!&ndash;<small>Amaze UI</small>&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<p class="page-header-description">Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件。</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="am-u-lg-3 tpl-index-settings-button">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置&ndash;&gt;-->
+            <!--&lt;!&ndash;</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
 
             <div class="row-content am-cf">
+                <!--<div class="widget-head am-cf">-->
+                <!--<div class="widget-title  am-cf">-->
+                <!--<i class="am-icon-home"></i>-->
+                <!--<small>首页</small>-->
+                <!--</div>-->
+                <!--</div>-->
                 <div class="row  am-cf">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-8">
+                        <div class="row am-cf">
+                            <!--用户信息-->
+                            <div class="am-u-sm-12 am-u-md-12 am-u-lg-6" >
+                                <div class="am-panel am-panel-success" style="background-color: #4b5357;">
+                                    <div class="am-panel-hd">
+                                        <span class="am-icon-credit-card-alt"> 用户信息</span>
+                                    </div>
+                                    <div class="am-panel-bd">
+                                        <div class="row am-cf">
+                                            <div id="WELCOME_IMG" class="am-u-md-12 am-animation-scale-up">
+                                                <img src="${basePath}/statics/img/welcome1.png"
+                                                     style="width: 100%;margin-right: 150px;">
+                                            </div>
+                                            <div class="am-u-md-6 am-animation-scale-up">
+                                                <img src="${basePath}/statics/img/user.jpg" title="用户"
+                                                     style="width: 65%;height: 65%;margin-top: 15px"/>
+                                            </div>
+                                            <div id="USER_PROFILE" class="am-u-md-6 am-animation-scale-up"
+                                                 style="margin-top: 50px">
+                                                <ul>
+                                                    <li><span style="font-size: 20px;"
+                                                              class="am-kai am-text-success">管理员</span></li>
+                                                    <li>
+                                                        <label class="am-kai am-text-success">ID：</label>
+                                                        <label class="am-kai am-text-success">admin</label>
+                                                    </li>
+                                                    <li>
+                                                        <label class="am-kai am-text-success">角色：</label>
+                                                        <label class="am-kai am-text-success">管理员</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--快捷入口-->
+                            <div class="am-u-sm-12 am-u-md-12 am-u-lg-6">
+                                <div class="am-panel am-panel-success" style="background-color: #4b5357;">
+                                    <div class="am-panel-hd">
+                                        <span class="am-icon-hand-o-right"> 快捷入口</span>
+                                    </div>
+                                    <div class="am-panel-bd">
+                                        <div class="row am-cf" style="margin-top: 5px">
+                                            <div class="am-u-md-12">
+                                                <div class="am-u-md-3" style="text-align: center">
+                                                    <a class="am-btn am-btn-default" style="width: 80px;height: 60px">
+                                                        <i class="am-icon-product-hunt am-icon-lg"></i>
+                                                    </a>
+                                                    <small style="color: white;">产品管理</small>
+                                                </div>
+
+                                                <div class="am-u-md-3" style="text-align: center">
+                                                    <a class="am-btn am-btn-default" style="width: 80px;height: 60px">
+                                                        <i class="am-icon-folder-open am-icon-lg"></i>
+                                                    </a>
+                                                    <small style="color: white;">项目管理</small>
+                                                </div>
+
+                                                <div class="am-u-md-3" style="text-align: center">
+                                                    <a class="am-btn am-btn-default" style="width: 80px;height: 60px">
+                                                        <i class="am-icon-info-circle am-icon-lg"></i>
+                                                    </a>
+                                                    <small style="color: white;">信息管理</small>
+                                                </div>
+
+                                                <div class="am-u-md-3" style="text-align: center">
+                                                    <a class="am-btn am-btn-default" style="width: 80px;height: 60px">
+                                                        <i class="am-icon-comment am-icon-lg"></i>
+                                                    </a>
+                                                    <small style="color: white;">消息管理</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row am-cf" style="margin-top: 6px">
+                                            <div class="am-u-md-12">
+                                                <div class="am-u-md-3" style="text-align: center">
+                                                    <a class="am-btn am-btn-default" style="width: 80px;height: 60px">
+                                                        <i class="am-icon-cogs am-icon-lg"></i>
+                                                    </a>
+                                                    <small style="color: white;">系统管理</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--图表1-->
+                        <div class="row am-cf">
+                            <div class="am-u-sm-12 am-u-md-12">
+                                <div class="widget am-cf">
+                                    <div class="widget-head am-cf">
+                                        <div class="widget-title am-fl">我的产品</div>
+                                        <div class="widget-function am-fr">
+                                            <a href="javascript:;" class="am-icon-cog"></a>
+                                        </div>
+                                    </div>
+                                    <div class="widget-body widget-body-md am-fr">
+
+                                        <table width="100%" class="am-table am-table-compact am-table-bordered tpl-table-black " >
+                                            <thead>
+                                            <tr>
+                                                <th style="text-align: center;">序号</th>
+                                                <th style="text-align: center;">产品编号</th>
+                                                <th style="text-align: center;">产品名称</th>
+                                                <th style="text-align: center;">生产企业</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody id="otherTableTbody">
+                                            <tr>
+                                                <td style="text-align: center;">1</td>
+                                                <td style="text-align: center;">SJK</td>
+                                                <td style="text-align: center;">棉花</td>
+                                                <td style="text-align: center;">xxx有限公司</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center;">2</td>
+                                                <td style="text-align: center;">FGFGD</td>
+                                                <td style="text-align: center;">丝绸</td>
+                                                <td style="text-align: center;">xxx有限公司</td>
+                                            </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--图表2-->
+                        <div class="row am-cf">
+                            <div class="am-u-sm-12 am-u-md-12">
+                                <div class="widget am-cf">
+                                    <div class="widget-head am-cf">
+                                        <div class="widget-title am-fl">项目进度</div>
+                                        <div class="widget-function am-fr">
+                                            <a href="javascript:;" class="am-icon-cog"></a>
+                                        </div>
+                                    </div>
+                                    <div class="widget-body widget-body-md am-fr">
+
+                                        <div class="am-progress-title">项目一 <span class="am-fr am-progress-title-more">28% / 100%</span></div>
+                                        <div class="am-progress">
+                                            <div class="am-progress-bar" style="width: 15%"></div>
+                                        </div>
+                                        <div class="am-progress-title">项目二 <span class="am-fr am-progress-title-more">28% / 100%</span></div>
+                                        <div class="am-progress">
+                                            <div class="am-progress-bar  am-progress-bar-warning" style="width: 75%"></div>
+                                        </div>
+                                        <div class="am-progress-title">项目三 <span class="am-fr am-progress-title-more">28% / 100%</span></div>
+                                        <div class="am-progress">
+                                            <div class="am-progress-bar am-progress-bar-danger" style="width: 35%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--消息列表-->
                     <div class="am-u-sm-12 am-u-md-12 am-u-lg-4">
-                        <div class="widget am-cf">
-                            <div class="widget-head am-cf">
-                                <div class="widget-title am-fl">月度财务收支计划</div>
-                                <div class="widget-function am-fr">
-                                    <a href="javascript:;" class="am-icon-cog"></a>
-                                </div>
+                        <div class="am-panel am-panel-success" style="background-color: #4b5357;">
+                            <div class="am-panel-hd">
+                                <span class="am-icon-comment"> 消息列表</span>
                             </div>
-                            <div class="widget-body am-fr">
-                                <div class="am-fl">
-                                    <div class="widget-fluctuation-period-text">
-                                        ￥61746.45
-                                        <button class="widget-fluctuation-tpl-btn">
-                                            <i class="am-icon-calendar"></i>
-                                            更多月份
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="am-fr am-cf">
-                                    <div class="widget-fluctuation-description-amount text-success" am-cf>
-                                        +￥30420.56
+                            <div class="am-panel-bd">
+                                <ul class="am-comments-list am-comments-list-flip">
+                                    <li class="am-comment am-comment-highlight">
+                                        <article class="am-comment"> <!-- 评论容器 -->
+                                            <a href="">
+                                                <img class="am-comment-avatar" alt=""/> <!-- 评论者头像 -->
+                                            </a>
 
-                                    </div>
-                                    <div class="widget-fluctuation-description-text am-text-right">
-                                        8月份收入
-                                    </div>
-                                </div>
+                                            <div class="am-comment-main"> <!-- 评论内容容器 -->
+                                                <header class="am-comment-hd">
+                                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
+                                                    <div class="am-comment-meta"> <!-- 评论元数据 -->
+                                                        <a href="#link-to-user" class="am-comment-author">张三</a><!-- 评论者 -->
+                                                        发送于
+                                                        <time datetime="">2020-7-12 15:30</time>
+                                                    </div>
+                                                </header>
+
+                                                <div class="am-comment-bd">
+                                                    <p style="color: white;">你好！我是张三</p>
+                                                </div> <!-- 评论内容 -->
+                                            </div>
+                                        </article>
+                                    </li>
+
+                                    <li class="am-comment am-comment-highlight">
+                                        <article class="am-comment"> <!-- 评论容器 -->
+                                            <a href="">
+                                                <img class="am-comment-avatar" alt=""/> <!-- 评论者头像 -->
+                                            </a>
+
+                                            <div class="am-comment-main"> <!-- 评论内容容器 -->
+                                                <header class="am-comment-hd">
+                                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
+                                                    <div class="am-comment-meta"> <!-- 评论元数据 -->
+                                                        <a href="#link-to-user" class="am-comment-author">李四</a><!-- 评论者 -->
+                                                        发送于
+                                                        <time datetime="">2020-7-12 15:30</time>
+                                                    </div>
+                                                </header>
+
+                                                <div class="am-comment-bd">
+                                                    <p style="color: white;">你好！我是李四</p>
+                                                </div> <!-- 评论内容 -->
+                                            </div>
+                                        </article>
+                                    </li>
+
+                                    <li class="am-comment am-comment-highlight">
+                                        <article class="am-comment"> <!-- 评论容器 -->
+                                            <a href="">
+                                                <img class="am-comment-avatar" alt=""/> <!-- 评论者头像 -->
+                                            </a>
+
+                                            <div class="am-comment-main"> <!-- 评论内容容器 -->
+                                                <header class="am-comment-hd">
+                                                    <!--<h3 class="am-comment-title">评论标题</h3>-->
+                                                    <div class="am-comment-meta"> <!-- 评论元数据 -->
+                                                        <a href="#link-to-user" class="am-comment-author">王五</a><!-- 评论者 -->
+                                                        发送于
+                                                        <time datetime="">2020-7-12 15:30</time>
+                                                    </div>
+                                                </header>
+
+                                                <div class="am-comment-bd">
+                                                    <p style="color: white;">你好！我是王五</p>
+                                                </div> <!-- 评论内容 -->
+                                            </div>
+                                        </article>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
-                        <div class="widget widget-primary am-cf">
-                            <div class="widget-statistic-header">
-                                本季度利润
-                            </div>
-                            <div class="widget-statistic-body">
-                                <div class="widget-statistic-value">
-                                    ￥27,294
-                                </div>
-                                <div class="widget-statistic-description">
-                                    本季度比去年多收入 <strong>2593元</strong> 人民币
-                                </div>
-                                <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="am-u-sm-12 am-u-md-6 am-u-lg-4">
-                        <div class="widget widget-purple am-cf">
-                            <div class="widget-statistic-header">
-                                本季度利润
-                            </div>
-                            <div class="widget-statistic-body">
-                                <div class="widget-statistic-value">
-                                    ￥27,294
-                                </div>
-                                <div class="widget-statistic-description">
-                                    本季度比去年多收入 <strong>2593元</strong> 人民币
-                                </div>
-                                <span class="widget-statistic-icon am-icon-support"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row am-cf">
-                    <div class="am-u-sm-12 am-u-md-8">
-                        <div class="widget am-cf">
-                            <div class="widget-head am-cf">
-                                <div class="widget-title am-fl">月度财务收支计划</div>
-                                <div class="widget-function am-fr">
-                                    <a href="javascript:;" class="am-icon-cog"></a>
-                                </div>
-                            </div>
-                            <div class="widget-body-md widget-body tpl-amendment-echarts am-fr" id="tpl-echarts">
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="am-u-sm-12 am-u-md-4">
-                        <div class="widget am-cf">
-                            <div class="widget-head am-cf">
-                                <div class="widget-title am-fl">专用服务器负载</div>
-                                <div class="widget-function am-fr">
-                                    <a href="javascript:;" class="am-icon-cog"></a>
-                                </div>
-                            </div>
-                            <div class="widget-body widget-body-md am-fr">
-
-                                <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span></div>
-                                <div class="am-progress">
-                                    <div class="am-progress-bar" style="width: 15%"></div>
-                                </div>
-                                <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span></div>
-                                <div class="am-progress">
-                                    <div class="am-progress-bar  am-progress-bar-warning" style="width: 75%"></div>
-                                </div>
-                                <div class="am-progress-title">CPU Load <span class="am-fr am-progress-title-more">28% / 100%</span></div>
-                                <div class="am-progress">
-                                    <div class="am-progress-bar am-progress-bar-danger" style="width: 35%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row am-cf">
-                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-4 widget-margin-bottom-lg ">
-                        <div class="tpl-user-card am-text-center widget-body-lg">
-                            <div class="tpl-user-card-title">
-                                禁言小张
-                            </div>
-                            <div class="achievement-subheading">
-                                月度最佳员工
-                            </div>
-                            <img class="achievement-image" src="${basePath}/statics/admin/assets/img/user07.png" alt="">
-                            <div class="achievement-description">
-                                禁言小张在
-                                <strong>30天内</strong> 禁言了
-                                <strong>200多</strong>人。
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-8 widget-margin-bottom-lg">
-
-                        <div class="widget am-cf widget-body-lg">
-
-                            <div class="widget-body  am-fr">
-                                <div class="am-scrollable-horizontal ">
-                                    <table width="100%" class="am-table am-table-compact am-text-nowrap tpl-table-black " id="example-r">
-                                        <thead>
-                                        <tr>
-                                            <th>文章标题</th>
-                                            <th>作者</th>
-                                            <th>时间</th>
-                                            <th>操作</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="gradeX">
-                                            <td>新加坡大数据初创公司 Latize 获 150 万美元风险融资</td>
-                                            <td>张鹏飞</td>
-                                            <td>2016-09-26</td>
-                                            <td>
-                                                <div class="tpl-table-black-operation">
-                                                    <a href="javascript:;">
-                                                        <i class="am-icon-pencil"></i> 编辑
-                                                    </a>
-                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                        <i class="am-icon-trash"></i> 删除
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>自拍的“政治角色”：观众背对希拉里自拍合影表示“支持”</td>
-                                            <td>天纵之人</td>
-                                            <td>2016-09-26</td>
-                                            <td>
-                                                <div class="tpl-table-black-operation">
-                                                    <a href="javascript:;">
-                                                        <i class="am-icon-pencil"></i> 编辑
-                                                    </a>
-                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                        <i class="am-icon-trash"></i> 删除
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>关于创新管理，我想和你当面聊聊。</td>
-                                            <td>王宽师</td>
-                                            <td>2016-09-26</td>
-                                            <td>
-                                                <div class="tpl-table-black-operation">
-                                                    <a href="javascript:;">
-                                                        <i class="am-icon-pencil"></i> 编辑
-                                                    </a>
-                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                        <i class="am-icon-trash"></i> 删除
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>究竟是趋势带动投资，还是投资引领趋势？</td>
-                                            <td>着迷</td>
-                                            <td>2016-09-26</td>
-                                            <td>
-                                                <div class="tpl-table-black-operation">
-                                                    <a href="javascript:;">
-                                                        <i class="am-icon-pencil"></i> 编辑
-                                                    </a>
-                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                        <i class="am-icon-trash"></i> 删除
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="even gradeC">
-                                            <td>Docker领域再添一员，网易云发布“蜂巢”，加入云计算之争</td>
-                                            <td>醉里挑灯看键</td>
-                                            <td>2016-09-26</td>
-                                            <td>
-                                                <div class="tpl-table-black-operation">
-                                                    <a href="javascript:;">
-                                                        <i class="am-icon-pencil"></i> 编辑
-                                                    </a>
-                                                    <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                        <i class="am-icon-trash"></i> 删除
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
+
     <script src="${basePath}/statics/admin/assets/js/amazeui.min.js"></script>
     <script src="${basePath}/statics/admin/assets/js/amazeui.datatables.min.js"></script>
     <script src="${basePath}/statics/admin/assets/js/dataTables.responsive.min.js"></script>
