@@ -66,11 +66,12 @@ public class RouterController {
         return "userInfo";
     }
 
-
+    /*
     @GetMapping("/admin/lifeCycleManage")
     public String lifeCycleMange(){
         return "admin/basic/lifeCycleManage";
     }
+    */
 
     @GetMapping("/message/sendList")
     public String sendList(){
@@ -93,4 +94,20 @@ public class RouterController {
         return "common/productTypeManage";
     }
 
+    /*****************************/
+
+    @GetMapping("/user/accountManage")
+    public String accountManage(){
+        return "admin/user/accountManage";
+    }
+
+    @GetMapping("/dataSelect/unitManage")
+    public String unitManage(){
+        return "admin/dataSelect/unitManage";
+    }
+
+    @GetMapping("/dataSelect/lifeCycleManage")
+    public String lifeCycleMange(){
+        return "admin/dataSelect/lifeCycleManage";
+    }
 }
