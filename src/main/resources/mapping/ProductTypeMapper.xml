@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ndky.WaterFDS.mapper.ProductTypeMapper">
+
+    <select id="getProductTypeList" resultType="ProductType">
+        SELECT *
+        FROM tb_product_type
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="name != null">
+                `name` LIKE concat ('%',#{name},'%')
+            </if>
+        </trim>
+        LIMIT #{currentPage},#{pageSize}
+    </select>
+
+    <select id="getProductTypeListCount" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_product_type
+        <trim prefix="WHERE" prefixOverrides="AND">
+            <if test="name != null">
+                `name` LIKE concat ('%',#{name},'%')
+            </if>
+        </trim>
+    </select>
+
+    <delete id="delAllProductType" parameterType="java.util.ArrayList">
+        DELETE
+        FROM tb_product_type
+        WHERE type_id IN
+        <foreach collection="array" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <delete id="delProductTypeByTypeId">
+        DELETE
+        FROM tb_product_type
+        WHERE type_id = #{typeId}
+    </delete>
+
+    <insert id="addProductType" parameterType="ProductType">
+        INSERT INTO tb_product_type
+        (`name`,introduce,remark)
+        VALUES
+        (#{name},#{introduce},#{remark})
+    </insert>
+
+    <select id="getProductTypeByTypeId" resultType="ProductType">
+        SELECT *
+        FROM tb_product_type
+        WHERE type_id=#{typeId}
+    </select>
+
+    <update id="updateProductTypeByTypeId" parameterType="ProductType">
+        UPDATE tb_product_type
+        SET `name`=#{name},introduce=#{introduce},remark=#{remark}
+        WHERE type_id=#{typeId}
+    </update>
+
+</mapper>

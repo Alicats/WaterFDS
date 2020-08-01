@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ndky.WaterFDS.mapper.UnitMapper">
+
+    <select id="queryUnits" resultType="Unit">
+        SELECT *
+        FROM tb_unit
+        ORDER BY unit_id DESC
+        LIMIT #{page},#{pageSize}
+    </select>
+
+    <select id="queryUnitsCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_unit
+    </select>
+
+    <select id="queryUnitById" resultType="Unit">
+        SELECT *
+        FROM tb_unit
+        WHERE unit_id = #{unitId}
+    </select>
+
+    <select id="searchUnitBySearchName" resultType="Unit">
+        SELECT *
+        FROM tb_unit
+        WHERE `name` like #{searchName}
+        ORDER BY unit_id DESC
+        LIMIT #{page},#{pageSize}
+    </select>
+
+    <select id="searchUnitCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_unit
+        WHERE `name` like #{searchName}
+    </select>
+
+    <insert id="addUnit" parameterType="Unit">
+        INSERT INTO tb_unit
+        (`name`,remark)
+        VALUES
+        (#{name},#{remark})
+    </insert>
+
+    <delete id="delUnitById">
+        DELETE
+        FROM tb_unit
+        WHERE unit_id = #{unitId}
+    </delete>
+
+    <delete id="delUnitBatch">
+        DELETE
+        FROM tb_unit
+        WHERE unit_id IN
+        <foreach collection="array" item="item" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <update id="updateUnitById" parameterType="Unit">
+        UPDATE tb_unit
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">
+              `name` = #{name},
+            </if>
+            <if test="remark != null">
+              remark = #{remark},
+            </if>
+        </trim>
+        WHERE unit_id = #{unitId}
+    </update>
+
+
+
+    
+</mapper>

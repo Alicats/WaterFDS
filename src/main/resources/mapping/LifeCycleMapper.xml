@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ndky.WaterFDS.mapper.LifecycleMapper">
+
+    <select id="queryLifeCyclesParent" resultType="LifeCycle">
+        SELECT *
+        FROM tb_life_cycle
+        WHERE pid = 0
+        LIMIT #{page},#{pageSize}
+    </select>
+
+    <select id="queryLifeCycleParentsWithoutLimit" resultType="LifeCycle">
+        SELECT *
+        FROM tb_life_cycle
+        WHERE pid = 0
+    </select>
+    
+    <select id="queryLifeCycleChildren" resultType="LifeCycle">
+        SELECT *
+        FROM tb_life_cycle
+        WHERE pid != 0
+    </select>
+
+    <select id="queryLifeCyclesParentCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_life_cycle
+        WHERE pid = 0
+    </select>
+
+    <select id="queryLifeCycleCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_life_cycle
+    </select>
+
+    <select id="queryLifeCycleById" resultType="LifeCycle">
+        SELECT *
+        FROM tb_life_cycle
+        WHERE life_id = #{lifeId}
+    </select>
+
+    <select id="searchLifeCycleParentBySearchName" resultType="LifeCycle">
+        SELECT *
+        FROM tb_life_cycle
+        WHERE `name` LIKE #{searchName}
+        AND pid = 0
+        LIMIT #{page},#{pageSize}
+    </select>
+
+    <select id="searchLifeCycleChildrenBySearchName" resultType="LifeCycle">
+        SELECT *
+        FROM tb_life_cycle
+        WHERE `name` LIKE #{searchName}
+        AND pid != 0
+    </select>
+
+    <select id="searchLifeCycleCountBySearchName" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_life_cycle
+        WHERE `name` LIKE #{searchName}
+    </select>
+
+    <select id="searchParentLifeCycleCountBySearchName" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_life_cycle
+        WHERE `name` LIKE #{searchName}
+        AND pid = 0
+    </select>
+
+    <insert id="addLifeCycle">
+        INSERT INTO tb_life_cycle
+        (`name`,introduce,remark,pid)
+        VALUES
+        (#{name},#{introduce},#{remark},#{pid})
+    </insert>
+
+    <delete id="delLifeCycleById">
+        DELETE
+        FROM tb_life_cycle
+        WHERE life_id = #{lifeId}
+    </delete>
+
+    <delete id="delLifeCycleBatch">
+        DELETE
+        FROM tb_life_cycle
+        WHERE life_id IN
+        <foreach collection="array" item="item" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <update id="updateLifeCycleById">
+        UPDATE tb_life_cycle
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">
+                `name` = #{name},
+            </if>
+            <if test="introduce != null">
+                introduce = #{introduce},
+            </if>
+            <if test="remark != null">
+                remark = #{remark},
+            </if>
+            <if test="pid != null">
+                pid = #{pid},
+            </if>
+        </trim>
+        WHERE life_id = #{lifeId}
+    </update>
+
+    
+</mapper>

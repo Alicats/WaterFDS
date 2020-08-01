@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ndky.WaterFDS.mapper.UserMapper">
+
+    <resultMap id="userEnterMap" type="User">
+        <result property="enterName" column="e_name"/>
+    </resultMap>
+
+    <select id="getUserByUserId" resultType="User">
+        SELECT *
+        FROM tb_user
+        WHERE user_id=#{userId}
+    </select>
+
+    <select id="getEnterNameByUserId" resultType="String">
+        SELECT e.name
+        FROM `tb_enter` AS e,tb_user AS u
+        WHERE u.user_id=#{userId}
+        AND u.enter_id=e.enter_id
+    </select>
+
+    <select id="getUserListByRoleId" resultMap="userEnterMap">
+        SELECT u.*,e.name "e_name"
+        FROM tb_user AS u,tb_enter AS e
+        WHERE u.enter_id=e.enter_id
+        AND u.role_id=#{roleId}
+        LIMIT #{currentPage},#{pageSize}
+    </select>
+
+    <select id="getUserListCountByRoleId" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_user AS u,tb_enter AS e
+        WHERE u.enter_id=e.enter_id
+        AND u.role_id=#{roleId}
+    </select>
+
+    <select id="searchUserListByRoleId" resultMap="userEnterMap">
+        SELECT u.*,e.name "e_name"
+        FROM tb_user AS u,tb_enter AS e
+        WHERE u.enter_id=e.enter_id
+        AND u.role_id=#{roleId}
+        AND u.username LIKE concat ('%',#{name},'%')
+        LIMIT #{currentPage},#{pageSize}
+    </select>
+
+    <select id="searchUserListCountByRoleId" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_user AS u,tb_enter AS e
+        WHERE u.enter_id=e.enter_id
+        AND u.role_id=#{roleId}
+        AND u.username LIKE concat ('%',#{name},'%')
+    </select>
+
+    <delete id="delAllUser" parameterType="java.util.ArrayList">
+        DELETE
+        FROM tb_user
+        WHERE user_id IN
+        <foreach collection="array" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <delete id="delUser" parameterType="String">
+        DELETE
+        FROM tb_user
+        WHERE user_id=#{userId}
+    </delete>
+
+    <update id="resetPassword" parameterType="String">
+        UPDATE tb_user
+        SET password=#{password}
+        WHERE user_id=#{userId}
+    </update>
+
+    <insert id="addUser" parameterType="User">
+        INSERT INTO tb_user
+        (user_id,password,username,address,email,telephone,role_id,enter_id,register_time,status,remark)
+        VALUES
+        (#{userId},#{password},#{username},#{address},#{email},#{telephone},#{roleId},#{enterId},#{registerTime},#{status},#{remark})
+    </insert>
+
+    <select id="optionEnterList" resultType="Enter">
+        SELECT *
+        FROM tb_enter
+        WHERE enter_id NOT IN (
+          SELECT e.enter_id
+          FROM `tb_user` AS u,tb_enter AS e
+          WHERE u.enter_id = e.enter_id
+          AND u.role_id=#{roleId}
+        )
+    </select>
+
+    <update id="updateUserByUserId" parameterType="User">
+        UPDATE tb_user
+        SET username=#{username},address=#{address},email=#{email},telephone=#{telephone},enter_id=#{enterId},remark=#{remark}
+        WHERE user_id=#{userId}
+    </update>
+
+    <select id="getOtherUserListByRoleIds" resultMap="userEnterMap">
+        SELECT u.*,e.name "e_name"
+        FROM tb_user AS u,tb_enter AS e
+        WHERE u.enter_id=e.enter_id
+        AND (u.role_id=#{roleId1} OR u.role_id=#{roleId2})
+        <if test="name != null">
+            AND u.username LIKE concat ('%',#{name},'%')
+        </if>
+        <if test='enterId != "-1"'>
+            AND u.enter_id = #{enterId}
+        </if>
+        LIMIT #{currentPage},#{pageSize}
+    </select>
+
+    <select id="getOtherUserListCountByRoleIds" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_user AS u,tb_enter AS e
+        WHERE u.enter_id=e.enter_id
+        AND (u.role_id=#{roleId1} OR u.role_id=#{roleId2})
+        <if test="name != null">
+            AND u.username LIKE concat ('%',#{name},'%')
+        </if>
+        <if test='enterId != "-1"'>
+            AND u.enter_id = #{enterId}
+        </if>
+    </select>
+
+    <update id="updateUserInfoByUserId" parameterType="User">
+        UPDATE tb_user
+        SET username=#{username},password=#{password},address=#{address},email=#{email},telephone=#{telephone},remark=#{remark}
+        WHERE user_id=#{userId}
+    </update>
+
+    <!--===========================================================分割线==========================================-->
+
+    <select id="queryReceivers" resultType="User">
+        SELECT u.user_id,u.username,r.role_name
+        FROM tb_user AS u,tb_role AS r
+        WHERE u.role_id = r.role_id
+        AND u.user_id != #{userId}
+    </select>
+
+    <select id="queryUsernameByUserId" resultType="String">
+        SELECT username
+        FROM tb_user
+        WHERE user_id = #{userId}
+    </select>
+</mapper>

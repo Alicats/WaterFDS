@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ndky.WaterFDS.mapper.MaterialGroupMapper">
+
+    <select id="queryMaterialGroups" resultType="MaterialGroup">
+        SELECT *
+        FROM tb_material_group
+        ORDER BY group_id DESC
+        LIMIT #{page},#{pageSize}
+    </select>
+
+    <select id="queryMaterialGroupsCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_material_group
+    </select>
+
+    <select id="queryMaterialGroupById" resultType="MaterialGroup">
+        SELECT *
+        FROM tb_material_group
+        WHERE group_id = #{groupId}
+    </select>
+
+    <select id="searchMaterialGroupBySearchName" resultType="MaterialGroup">
+        SELECT *
+        FROM tb_material_group
+        WHERE `name` LIKE #{searchName}
+        ORDER BY group_id DESC
+        LIMIT #{page},#{pageSize}
+    </select>
+
+    <select id="searchMaterialGroupCountBySearchName" resultType="Integer">
+        SELECT COUNT(*)
+        FROM tb_material_group
+        WHERE `name` LIKE #{searchName}
+    </select>
+
+    <insert id="addMaterialGroup">
+        INSERT INTO tb_material_group
+        (`name`,introduce)
+        VALUES
+        (#{name},#{introduce})
+    </insert>
+
+    <delete id="delMaterialGroupById">
+        DELETE
+        FROM tb_material_group
+        WHERE group_id = #{groupId}
+    </delete>
+
+    <delete id="delMaterialGroupBatch">
+        DELETE
+        FROM tb_material_group
+        WHERE group_id IN
+        <foreach collection="array" item="item" separator="," open="(" close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <update id="updateMaterialGroupById">
+        UPDATE tb_material_group
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">
+                `name` = #{name},
+            </if>
+            <if test="introduce != null">
+                introduce = #{introduce},
+            </if>
+        </trim>
+        WHERE group_id = #{groupId}
+    </update>
+
+
+</mapper>

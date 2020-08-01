@@ -1,0 +1,50 @@
+@charset "utf-8";
+body{
+	margin: 0;
+}
+.login{}
+.login .login-head{width:960px;margin:20px auto;height: 120px;}
+.login .login-head .login-head-a{text-align: center;float: left;}
+.login .login-head .login-head-a img{margin-left:-150px;}
+.login .login-head .login-head-a p{font-size: 20px;margin: 0;}
+.myName{
+	color: #666;
+	text-decoration: none !important;
+}
+.login .login-head .login-head-b{border-left: 1px solid #666666;float: left;height: 75px;line-height: 75px;margin-left: 20px;padding-left: 30px;width: 300px;font-size: 30px;font-family: 楷体}
+.login .login-con{text-align: center;background: url(../../img/底图（无文字）.jpg)no-repeat;background-size:100% 100%;height:500px;}
+.login .login-con .login-a{width:800px;margin: 0 auto;text-align: left;padding-top: 0px;min-height: 350px;}
+.login .login-con .login-a form{}
+.login .login-con .login-a .login-b{float: right;width: 344px;opacity: 0.8;height: 317px;margin-right: -100px;margin-top: 50px;background-color:rgba(244,247,245,0.7);}
+.login .login-con .login-a .login-b .login-b-a{background-color: rgba(244,247,245,0.5);height: 36px;line-height: 36px;font-size: 14px;font-weight: bold;padding-left: 15px;}
+.login .login-con .login-a .login-b .login-b-b{height: 155px;}
+.login .login-con .login-a .login-b .login-b-b ul li{height: 55px;_height: 50px;list-style-type: none;font-family: "微软雅黑","粗体",Arial;font-size: 14px;}
+.login .login-con .login-a .login-b .login-b-b ul li label{display: inline-block;font-size: 16px;color: #000000;}
+.login .login-con .login-a .login-b .login-b-b ul li input{width: 187px;color: rgb(153, 153, 153);height: 32px;line-height: 32px;border: solid 1px #d3d3d3;font-size: 14px;}
+.login .login-con .login-a .login-b .login-b-b ul li h1{font-weight: normal;color: #ff0000;background: url(../../img/icon.png)no-repeat 95px -28px;font-size: 12px;padding-left: 120px;padding-top: 6px;margin: -5px 0px 0px -30px;}
+.login .login-con .login-a .login-b .login-b-a h2{font-weight: normal;color: #1717ef;font-size: 18px;float:right;margin: 3px 0px 0px -30px;}
+.login .login-con .login-a .login-b .login-b-b ul li #checkCode{height: 32px;line-height: 32px;width: 104px;}
+.login .login-con .login-a .login-b .login-b-b ul li img{vertical-align: middle;width: 76px;height: 36px; cursor: pointer;}
+.login .login-con .login-a .login-b .login-b-b ul li a{color: #447bd6;font-family: "微软雅黑","宋体",Arial;font-size: 12px;}
+.login .login-con .login-a .login-b .login-b-b ul .login-x{padding-top: 0px;height: 65px;}
+.login .login-con .login-a .login-b .login-b-b ul .login-x .login-x-a{width: 304px;height: 50px;float: left;}
+.login .login-con .login-a .login-b .login-b-b ul .login-x .login-x-a .x{background-position: right -208px;background-image: url(../../img/btn-type2.png);background-repeat: no-repeat;height: 37px;float: left;width: 3px;}
+.login .login-con .login-a .login-b .login-b-b ul .login-x .login-x-a input{width:251px;float: left;border: none;background-position: 0 -120px;background-image: url(../../img/btn-type2.png);background-repeat: no-repeat;height: 37px;line-height: 37px;color: #000;font-size: 14px;font-weight: bold; letter-spacing:50px; text-indent:50px;   cursor: pointer;
+}
+.login .login-con .login-a .login-b .login-b-b ul .login-x .login-x-b{}
+.login .login-con .login-a .login-b .login-b-c{text-align: center;padding-top: 10px;border-top: solid 1px #f0f0f0;}
+.login .login-con .login-a .login-b .login-b-c a{color: #447bd6;font-family: "微软雅黑","宋体",Arial;font-size: 12px;}
+.login .login-con .login-a .login-b .login-b-c a:hover{color: #f3ab3a;}
+.login .login-foot{ text-align: center;font-size: 14px;color: #666666;margin-top: 30px;}
+
+.code{      
+background-image:url(../../img/水足迹数据遴选与集成分析系统.png);
+font-family:Arial;      
+font-style:italic;      
+color:Red;      
+border:0;      
+padding:2px 3px;      
+letter-spacing:3px;      
+font-weight:bolder;      
+}  
+#input1{width: 50px;}   

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ndky.WaterFDS.mapper.EnterMapper">
+
+    <select id="getEnterList" resultType="Enter">
+        SELECT *
+        FROM tb_enter
+        ORDER BY enter_id DESC
+        LIMIT #{currentPage},#{pageSize}
+    </select>
+
+    <select id="getEnterListCount" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_enter
+    </select>
+
+    <select id="searchEnterList" resultType="Enter">
+        SELECT *
+        FROM tb_enter
+        WHERE `name` LIKE concat('%',#{name},'%')
+        LIMIT #{currentPage},#{pageSize}
+    </select>
+
+    <select id="searchEnterListCount" resultType="int">
+        SELECT COUNT(*)
+        FROM tb_enter
+        WHERE `name` LIKE concat('%',#{name},'%')
+    </select>
+
+    <select id="getEnterByEnterId" resultType="Enter">
+        SELECT *
+        FROM tb_enter
+        WHERE enter_id=#{enterId}
+    </select>
+
+    <update id="updateEnterByEnterId">
+        UPDATE tb_enter
+        SET `name`=#{name},address=#{address},contact=#{contact},introduce=#{introduce}
+        WHERE enter_id=#{enterId}
+    </update>
+
+    <delete id="delEnterByEnterId">
+        DELETE
+        FROM tb_enter
+        WHERE enter_id=#{enterId}
+    </delete>
+
+    <delete id="delAllEnter" parameterType="java.util.ArrayList">
+        DELETE
+        FROM tb_enter
+        WHERE enter_id IN
+        <foreach collection="array" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </delete>
+
+    <insert id="addEnter" parameterType="Enter">
+        INSERT INTO tb_enter
+        (name,address,contact,introduce)
+        VALUES
+        (#{name},#{address},#{contact},#{introduce})
+    </insert>
+</mapper>
