@@ -29,5 +29,6 @@ mybatis:
 server:
   servlet:
     context-path: /WaterFDS
+  port: 8888
 
 
